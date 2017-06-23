@@ -19,6 +19,7 @@
     "lodash": "^4.17.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "recompose": "^0.23.5",
     "socket.io": "^2.0.3",
     "webpack": "^3.0.0"
   }

@@ -5,7 +5,6 @@ const express = require('express');
 const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http)
-const axios = require('axios');
 
 app.use(traffic);
 
@@ -13,10 +12,12 @@ app.get('/', (req, res) => res.sendFile(`${__dirname}/index.html`));
 
 io.on('connection', socket => {
 	console.log('Connected!');
+
 	socket.on('message', msg => {
 		console.log({ msg })
 		io.emit('message', `You sent me ${msg}!`);
 	});
+
 	socket.on('disconnect', () => console.log('Disconnected!'))
 })
 
